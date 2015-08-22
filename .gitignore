@@ -3,3 +3,5 @@
 .ipynb_checkpoints
 # html is generated, so does not need to be part of the repo
 *.html
+# compiled python files
+*.pyc
