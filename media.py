@@ -2,15 +2,17 @@
 
 import webbrowser
 from tmdb3 import set_key
+# change name of imported class to avoid conflict with our class
 from tmdb3 import Movie as theMovie
 import os
 import datetime
 
+# Make sure this is set as an environment variable!
 set_key(os.getenv('TMDB_API_KEY'))
 
+# Movie class that takes TMDB ID to init, and fills in properties through lookups
 class Movie(object):
     
-    # VALID_RATINGS=["G","PG","R"]
     def __init__(self, movie_ID):
         self.title = theMovie(movie_ID).title
         self.tagline = theMovie(movie_ID).tagline
