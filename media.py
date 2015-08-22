@@ -1,16 +1,22 @@
 # Define Movie class and backend code to get attributes
 
 import webbrowser
-import tmdb3
+from tmdb3 import set_key
+from tmdb3 import Movie as theMovie
+import os
+import datetime
+
+set_key(os.getenv('TMDB_API_KEY'))
 
 class Movie(object):
     
     # VALID_RATINGS=["G","PG","R"]
-    def __init__(self, movie_title, movie_storyline, poster_image, trailer_youtube):
-        self.title = movie_title
-        self.storyline = movie_storyline
-        self.poster_image_url = poster_image
-        self.trailer_youtube_url = trailer_youtube
+    def __init__(self, movie_ID):
+        self.title = theMovie(movie_ID).title
+        self.tagline = theMovie(movie_ID).tagline
+        self.release_year = theMovie(movie_ID).releasedate.strftime("%Y")
+        self.poster_image_url = theMovie(movie_ID).poster.geturl()
+        self.trailer_youtube_url = theMovie(movie_ID).youtube_trailers[0].geturl()
         
     def show_trailer(self):
         webbrowser.open(self.trailer_youtube_url)
