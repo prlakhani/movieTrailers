@@ -17,7 +17,8 @@ fight_club = media.Movie(550)
 
 gattaca = media.Movie(782)
 
-movies = [dune, imitation_game, blade_runner, two_night_stand, fight_club, gattaca]
+movies = [dune, imitation_game, blade_runner,
+          two_night_stand, fight_club, gattaca]
 
 # Generate html website
 fresh_tomatoes.open_movies_page(movies)
