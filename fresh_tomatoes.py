@@ -1,3 +1,5 @@
+''' Generate Movie list page '''
+
 import webbrowser
 import os
 import re
@@ -113,6 +115,10 @@ main_page_content = '''
     <div class="container">
       {movie_tiles}
     </div>
+    <hr>
+    <footer>
+    Powered by: <img src="https://d3a8mw37cqal2z.cloudfront.net/images/logos/var_6_0_tmdb-logo-1Line-GreenGradient-Shadow-Bree.png" width="267" height="56">
+    </footer>
   </body>
 </html>
 '''
@@ -121,7 +127,7 @@ main_page_content = '''
 movie_tile_content = '''
 <div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="{trailer_youtube_id}" data-toggle="modal" data-target="#trailer">
     <img src="{poster_image_url}" width="220" height="342">
-    <h2>{movie_title}</h2> ({release_year})
+    <h3>{movie_title}</h3><h4>({release_year})</h4>
     <p>{tagline}
 </div>
 '''

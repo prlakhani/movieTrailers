@@ -1,4 +1,4 @@
-# Define Movie class and backend code to get attributes
+''' Define Movie class and backend code to get attributes '''
 
 import webbrowser
 from tmdb3 import set_key
